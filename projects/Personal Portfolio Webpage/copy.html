@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title>CodePen - freeCodeCamp : Build a Personal Portfolio Webpage</title>
+  <title>UI/UX Design and Development</title>
+  
+  
+  <link rel='stylesheet prefetch' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <style>
+      body{
+  margin:0;
+  padding:0;
+  color:#666;
+  background:#888;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:20px;
+}
+h2,h3{
+  color:#888;
+  font-weight:bold;
+  text-align:center;
+  text-transform:uppercase;
+}
+a{
+  color:#722872;
+}
+a:hover,a:focus{color:#592059;
+}
+#banner .container, 
+main header, 
+#portfolio .grid, 
+#contact>div,
+footer #footer-above{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-flow:row wrap;
+      flex-flow:row wrap;
+  -ms-flex-pack:distribute;
+      justify-content:space-around;
+  -webkit-box-align:start;
+      -ms-flex-align:start;
+          align-items:flex-start;
+  margin:0 auto; 
+}
+#banner{
+  background-color:#722872 !important;
+  height:80px;
+  box-shadow:0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-color:#592059;
+}
+#banner .container{width:95%;max-width:1024px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;
+}
+#banner .container::before, #banner .container::after{display:none
+}
+#banner img{height:50px;margin:15px 0;
+}
+nav{
+  font-size:13px;
+  background:#722872;
+  -webkit-transition:all .3s;
+  transition:all .3s;
+}
+@media(max-width:768px){
+  nav{padding:5px;text-align:center;margin:0 auto;width:120%;
+  }
+  nav .active a{color:#722872;background:#bbb;box-shadow:0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  }
+}
+.nav>li{height:100%;text-transform:uppercase;font-weight:bold;letter-spacing:2px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;
+}
+.nav>li a{color:#ffffff;padding:10px 20px;
+}
+.nav>li a:hover{color:#722872;background:#bbb;box-shadow:0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+.navbar-toggle{margin-right:0;
+}
+#top{
+  height:80px;
+  display:block;
+}
+main >*:not(.scroll-top){max-width:1024px;margin:0 auto;box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+main header{background:#aaa;color:#fff;text-align:right;padding:70px 10% 50px;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-ms-flex-line-pack:distribute;align-content:space-around;
+}
+@media(min-width:1023px){
+  main header{padding:50px 30px;
+  }
+}
+main header img{border-radius:50%;margin:30px 0 10px;max-width:80%;height:auto;width:250px;
+}
+main header .intro-text{max-width:675px;text-align:center;margin-bottom:30px;
+}
+@media(min-width:1023px){
+  main header .intro-text{text-align:right;width:610px;
+  }
+}
+main header .intro-text .skills{font-size:1.15em;
+}
+main section{background:#eee;padding:40px 0;
+}
+main section#contact>div{margin:0px auto;
+}
+main section#contact>div>div{width:80%;
+}
+main section#contact>div>div p{margin:60px auto 0;max-width:700px;
+}
+@media(min-width:1023px){
+  main section#contact>div>div{max-width:38%;
+  }
+  main section#contact>div>div p{margin-top:35px;
+  }
+  main section#contact>div>div p:last-child{margin-top:270px;
+  }
+}
+#portfolio .grid{padding:0;max-width:90%;list-style:none;margin-top:20px;
+}
+#portfolio .grid li{margin:20px;max-width:600px;
+}
+@media(min-width:1023px){
+  #portfolio .grid li{max-width:420px;
+  }
+}
+#portfolio img{max-width:100%;height:auto;display:block;
+}
+form{
+  width:80%;
+}
+@media(min-width:1023px){
+  form{width:40%;margin-left:20px;
+  }
+}
+form .row:first-child .form-item{border-top:1px solid #fff;
+}
+.form-item{position:relative;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #bbb;
+}
+.form-item input, .form-item textarea{z-index:1;position:relative;padding-right:0;padding-left:0;border:0;border-radius:0;font-size:1.5em;background:0 0;box-shadow:none!important;resize:none;width:100%;
+}
+.form-item input:focus, .form-item textarea:focus{outline:0
+}
+.form-item label{display:block;z-index:0;position:relative;top:2em;margin:0;font-size:.85em;line-height:1.764705882em;vertical-align:middle;vertical-align:baseline;opacity:0;-webkit-transition:top .3s ease,opacity .3s ease;transition:top .3s ease,opacity .3s ease;
+}
+.form-item-filled label{top:0;opacity:1;color:#aaa;
+}
+.form-item-focused label{color:#722872;
+}
+footer{
+  color:#fff;
+  background-color:#aaa;
+  text-align:center;
+  box-shadow:0px 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+footer h3{margin-bottom:30px;color:#fff;
+}
+#footer-above{padding-top:50px;width:80%;
+}
+#footer-above div{margin-bottom:50px;width:250px;
+}
+#footer-above ul{padding:0;
+}
+#footer-above li{display:inline;
+}
+#footer-below{box-shadow:0px 0px 1px 1px rgba(0, 0, 0, 0.2);padding:25px 0;background-color:#722872;text-align:center;
+}
+.button{
+  color:#fff;
+  border:solid 2px #fff;
+  border-radius:50%;
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+  font-size:20px;
+  line-height:48px;
+  -webkit-transition:all .3s ease-in-out;
+  transition:all .3s ease-in-out;
+}
+.button:hover{border:solid 2px #fff;color:#722872;background:#fff;
+}
+.scroll-top{
+  z-index:1049;
+  position:fixed; 
+  visibility:visible;
+  bottom:2%;right:2%;
+}
+.scroll-top a{background:#722872;
+}
+.scroll-top a:hover, .scroll-top a:focus{color:#722872;background-color:#bbb;border-color:#722872;
+}
+@media(min-width:768px){
+  .scroll-top a{visibility:hidden;
+  }
+}
+hr.star-bright, hr.star-dark{margin:40px auto 30px;padding:0;max-width:512px;border:0;border-top:solid 5px;text-align:center;
+}
+@media(min-width:1023px){
+  header hr.star-bright, header hr.star-dark{margin-right:0;text-align:right;
+  }
+  header hr.star-bright:after, header hr.star-dark:after{right:-10px;
+  }
+}
+hr.star-bright:after, hr.star-dark:after{content:'\f121';font-family:FontAwesome;display:inline-block;position:relative;top:-.8em;padding:0 .25em;font-size:2em;
+}
+hr.star-bright{border-color:#fff;
+}
+hr.star-bright:after{color:#fff;background-color:#aaa;
+}
+hr.star-dark{border-color:#888;
+}
+hr.star-dark:after{color:#888;background-color:#eee;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+</head>
+
+<body translate="no" >
+
+  
+<header class="navbar navbar-default navbar-fixed-top" id="banner">
+  <div class="container"><a rel="nofollow" rel="noreferrer"class="scrollable" href="#top"><img src="http://qlip.in/images/qlip.png" alt="qlip | UI/UX Design and Development" title="qlip | UI/UX Design and Development"/></a>
+    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    <nav class="collapse navbar-collapse" id="navbar" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a rel="nofollow" rel="noreferrer"class="scrollable" href="#top">About</a></li>
+        <li><a rel="nofollow" rel="noreferrer"class="scrollable" href="#portfolio">Portfolio</a></li>
+        <li><a rel="nofollow" rel="noreferrer"class="scrollable" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- end header--><a rel="nofollow" rel="noreferrer"id="top" name="home"></a>
+<main>
+  <header>
+    <div class="intro-text">
+      <p>Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction;  devoted to functional programming and information architecture.</p>
+      <hr class="star-bright"/><span class="skills">Web Developer - User Experience Designer - Graphic Artist</span>
+    </div><img src="http://qlip.in/images/avatar.jpg" alt="A picture of Justin looking at San Francisco from across the Golden Gate Bridge." title="A picture of Justin looking at San Francisco from across the Golden Gate Bridge."/>
+  </header>
+  <!-- Gallery Grid Section-->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <hr class="star-dark"/>
+    <ul class="grid">
+      <li><img src="http://qlip.in/images/YMCA-Realtor-Donation-3.jpg" alt=""/></li>
+      <li><img src="http://qlip.in/images/webcaballero.jpg" alt=""/></li>
+      <li><img src="http://qlip.in/images/webmarqas.jpg" alt=""/></li>
+      <li><img src="http://qlip.in/images/webbrandaxis.jpg" alt=""/></li>
+      <li><img src="http://qlip.in/images/panacea1.jpg" alt=""/></li>
+      <li><img src="http://qlip.in/images/webgatomalo.jpg" alt=""/></li>
+    </ul>
+  </section>
+  <!-- Contact Section-->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <hr class="star-dark"/>
+    <div>
+      <form id="contactForm" novalidate="">
+        <div class="form-item">
+          <label for="“name”">Name</label>
+          <input id="name" type="text" placeholder="Name" required=""/>
+        </div>
+        <div class="form-item">
+          <label for="“email”">Email Address</label>
+          <input id="email" type="email" placeholder="Email Address" required=""/>
+        </div>
+        <div class="form-item">
+          <label for="“phone”">Phone Number</label>
+          <input id="phone" type="tel" placeholder="Phone Number" required=""/>
+        </div>
+        <div class="form-item">
+          <label for="“message”">Message</label>
+          <textarea id="message" rows="5" placeholder="Message" required=""></textarea>
+        </div><br/>
+        <button type="submit">Send</button>
+      </form>
+      <div>
+        <p>Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
+        <p>I promise to reply A.S.A.P.</p>
+        <p>Note: No spam/soliciting pour moi, merci :)</p>
+      </div>
+    </div>
+  </section>
+  <!-- Scroll to Top Button (Only supposed to be visible on small and small screen sizes)-->
+  <div class="scroll-top"><a rel="nofollow" rel="noreferrer"class="button scrollable" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+</main>
+<!-- Footer-->
+<footer>
+  <div id="footer-above">
+    <div>
+      <h3>About this page</h3>
+      <p>Made with <i class="fa fa-fw fa-coffee"></i> and <i class="fa fa-fw fa-music"></i><br/>by <a rel="nofollow" rel="noreferrer"href="http://qlip.in">Justin Sane</a>.</p>
+    </div>
+    <div>
+      <h3>Around the Web</h3>
+      <ul>
+        <li><a rel="nofollow" rel="noreferrer"class="button social" href="https://www.linkedin.com/in/hallaathrad"><i class="fa fa-fw fa-linkedin"></i></a></li>
+        <li><a rel="nofollow" rel="noreferrer"class="button social" href="https://github.com/hallaathrad"><i class="fa fa-fw fa-github"></i></a></li>
+        <li><a rel="nofollow" rel="noreferrer"class="button social" href="https://twitter.com/hallaathrad"><i class="fa fa-fw fa-twitter"></i></a></li>
+        <li><a rel="nofollow" rel="noreferrer"class="button social" href="https://www.flickr.com/photos/hallaathrad/" title="My Flickr"><i class="fa fa-fw fa-flickr"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer-below">qlip © 
+    <script>document.write(new Date().getFullYear())</script>. All Rights Reversed
+  </div>
+</footer>
+<!-- <aside id="html5badge"><img src="http://www.w3.org/html/logo/badge/html5-badge-v-css3-graphics-semantics.png" width="38" height="170" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, and Semantics"></aside>-->
+    <script src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+
+    <script>
+    $(window).on('resize', function() {
+  'use strict';
+  var element	= document.querySelector('#banner'),
+      elHeight = 0,
+      elTop = 0,
+      dHeight	= 0,
+      wHeight	= 0,
+      wScrollCurrent = 0,
+      wScrollBefore	= 0,
+      wScrollDiff	= 0; 
+      window.addEventListener('scroll', function () {
+        // Hide the displayed menu. If you want to scroll, you're obviously not interested in the options.
+        $('.navbar-collapse').collapse('hide');
+        $('.navbar-toggle').addClass('collapsed').blur();
+        if($(window).width() <= 768) {
+          elHeight = element.offsetHeight;
+          dHeight = document.body.offsetHeight;
+          wHeight = window.innerHeight;
+          wScrollCurrent = window.pageYOffset;
+          wScrollDiff = wScrollBefore - wScrollCurrent;
+          elTop = parseInt(window.getComputedStyle(element).getPropertyValue('top')) + wScrollDiff;
+
+          // scrolled to the very top; element sticks to the top
+          if(wScrollCurrent <= 0) {
+              element.style.top = '0px';
+          } // scrolled up; element slides in
+            else if(wScrollDiff > 0) {
+              element.style.top = (elTop > 0? 0 : elTop) + 'px'; 
+          } // scrolled down
+            else if(wScrollDiff < 0) {
+              // scrolled to the very bottom; element slides in
+              if(wScrollCurrent + wHeight >= dHeight - elHeight) {  
+                element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
+              } // scrolled down; element slides out
+                else { element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px'; }
+            }
+          wScrollBefore = wScrollCurrent;
+        } //
+          else element.style.top = '0px';
+      });
+}).resize();
+
+// Floating label headings for the contact form
+$(function() {$("body")
+ .on("input propertychange", ".form-item",function(e) {
+  $(this).toggleClass("form-item-filled",!! $(e.target).val());})
+ .on("focus", ".form-item",function() {
+  $(this).addClass("form-item-focused");})
+ .on("blur", ".form-item",function() {
+  $(this).removeClass("form-item-focused");});
+});
+
+// Highlight the top nav as scrolling occurs
+$('body').scrollspy({target: '.navbar-fixed-top'})
+
+// Closes the Responsive Menu on Menu Item Click
+$('.navbar-collapse ul li a').click(function() {
+  $(".navbar-collapse").collapse('hide');});
+
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {$('body').on('click', 'a.scrollable', function(event) {
+  var $anchor = $(this);
+  $('html, body').stop().animate({scrollTop: $($anchor.attr('href')).offset().top},1500,'easeInOutExpo');
+  event.preventDefault();
+  });
+});
+  //# sourceURL=pen.js
+  </script>
+
+  
+  
+
+</body>
+</html>
+ 
