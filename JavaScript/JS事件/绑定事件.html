@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    function myAddEvent(obj, ev, fn) {
+        if (obj.attachEvent) {
+            obj.attachEvent('on' + ev, fn);//IE
+        } else {
+            obj.addEventListener(ev, fn, false);//FF
+        }
+    }
+    window.onload = function() {
+        var oBtn = document.getElementById('btn1');
+        myAddEvent(oBtn,'click',function(){
+        	alert('a');
+        })
+
+        myAddEvent(oBtn,'click',function(){
+        	alert('b');
+        })
+
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="点击">
+</body>
+
+</html>

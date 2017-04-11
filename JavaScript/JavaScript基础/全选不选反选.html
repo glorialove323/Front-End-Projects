@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var oBtn3 = document.getElementById('btn3');
+        var oInput = document.getElementsByTagName('input');
+
+        oBtn1.onclick = function(){
+        	for (var i = 0; i < oInput.length; i++) {
+        		oInput[i].checked = true;
+        	}
+        }
+
+        oBtn2.onclick = function(){
+        	for (var i = 0; i < oInput.length; i++) {
+        		oInput[i].checked=false;
+        	}
+        }
+
+        oBtn3.onclick = function(){
+        	for (var i = 0; i < oInput.length; i++) {
+        		if (oInput[i].checked==true) {
+        			oInput[i].checked=false;
+        		}else{
+        			oInput[i].checked=true;
+        		}
+        	}
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="全选">
+    <input type="button" id="btn2" value="不选">
+    <input type="button" id="btn3" value="反选">
+    <div id="div1">
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+    </div>
+</body>
+
+</html>

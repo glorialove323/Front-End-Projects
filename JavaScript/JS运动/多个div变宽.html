@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    div {
+        height: 50px;
+        width: 100px;
+        background: red;
+        margin: 10px;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+            var aDiv = document.getElementsByTagName('div');
+            for (var i = 0; i < aDiv.length; i++) {
+                // 多个物体运动时，不能共享同一个变量，而是给每一个分配一个
+                aDiv[i].timer = null;
+                aDiv[i].onmouseover = function() {
+                    startMove(this, 400);
+                };
+                aDiv[i].onmouseout = function() {
+                    startMove(this, 100);
+                };
+            }
+        }
+        // var timer = null;
+
+    function startMove(obj, iTarget) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var speed = (iTarget - obj.offsetWidth) / 6;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+            if (obj.offsetWidth == iTarget) {
+                clearInterval(obj.timer);
+            } else {
+                obj.style.width = obj.offsetWidth + speed + 'px';
+            }
+        }, 30)
+    }
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

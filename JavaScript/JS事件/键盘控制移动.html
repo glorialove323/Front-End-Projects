@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background: #CCC;
+        position: absolute;
+    }
+    </style>
+    <script type="text/javascript">
+    	document.onkeydown = function(ev){
+    		var oEvent = ev||event;
+    		var oDiv = document.getElementById('div1');
+
+    		// 37是键盘上的向左键，39是向右键
+    		if (oEvent.keyCode ==37) {
+    			oDiv.style.left=oDiv.offsetLeft-10+'px';	
+    		}else if (oEvent.keyCode==39) {
+    			oDiv.style.left=oDiv.offsetLeft+10+'px';
+    		}
+    	}
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    window.onload = function() {
+            var oTxt = document.getElementById('text');
+            oTxt.onkeydown = function(ev) {
+                // 会阻止所有的默认事件
+                // return false;
+                /*0	48
+                9	57*/
+                // 如果用户按的不是退格并且也不是数字，才不允许输入
+                var oEvent = ev || event;
+                if (oEvent.keyCode != 8 && (oEvent.keyCode < 48 || oEvent.keyCode > 57)) {
+                        return false;
+                    }
+                }
+            }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text">
+</body>
+
+</html>

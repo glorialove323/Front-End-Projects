@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        height: 150px;
+        width: 100px;
+        background: red;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onscroll = function() {
+        var oDiv = document.getElementById('div1');
+        // 获取滚动条距离scrollTop，谷歌不识别前者，必须加上后者，才能兼容各个浏览器
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        // oDiv.style.top = (document.documentElement.clientHeight - oDiv.offsetHeight)/2 + scrollTop + 'px';
+        startMove(parseInt((document.documentElement.clientHeight - oDiv.offsetHeight) / 2 + scrollTop));
+    }
+
+    var timer = null;
+
+    function startMove(iTarget) {
+        var oDiv = document.getElementById('div1');
+
+        clearInterval(timer);
+        timer = setInterval(function() {
+            var speed = (iTarget - oDiv.offsetTop) / 4;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+            if (oDiv.offsetTop == iTarget) {
+                clearInterval(timer);
+            } else {
+                // 会出现小数.5，会出现抖动
+                document.title = iTarget;
+                oDiv.style.top = oDiv.offsetTop + speed + 'px';
+
+            }
+        }, 30)
+    }
+    </script>
+</head>
+
+<body style="height: 2000px;">
+    <div id="div1"></div>
+</body>
+
+</html>

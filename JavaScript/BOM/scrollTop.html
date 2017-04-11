@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    document.onclick = function() {
+        //IE、FF
+        //alert(document.documentElement.scrollTop);
+
+        //chrome
+        //alert(document.body.scrollTop);
+
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        alert(scrollTop);
+    };
+    </script>
+</head>
+
+<body style="height:2000px;">
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    // 父类A
+    function A() {
+        this.abc = 12;
+    }
+
+    A.prototype.show = function() {
+        alert(this.abc);
+    }
+
+    // B类继承A类
+    function B(){
+    	A.call(this);	/*继承A里面所有的属性*/
+    }
+
+    /*B.prototype = A.prototype;//这样赋值会产生引用，导致子类变化，父类也会变化*/
+    for(var i in A.prototype){
+    	B.prototype[i] = A.prototype[i];
+    }//这样子就可以实现子类继承父类的方法，并且也不影响
+
+   	// 子类可以随意添加自己的方法，并不会改变父类
+   	B.prototype.fn = function(){
+   		alert('abc');
+   	}
+   	// B既有父类里的所有方法，也有自己单独的方法
+   	var obj = new B();
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

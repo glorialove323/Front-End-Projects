@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        float: left;
+        background: yellow;
+        border: 10px solid black;
+        filter: alpha(opacity: 30);
+        opacity: 0.3;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+
+        oDiv.onmouseover = function() {
+            startMove(this, 'opacity', 100);
+        }
+        oDiv.onmouseout = function() {
+            startMove(this, 'opacity', 30);
+        }
+    }
+
+    function getStyle(obj, name) {
+        if (obj.currentStyle) {
+            return obj.currentStyle[name];
+        } else {
+            return getComputedStyle(obj, false)[name];
+        }
+    }
+
+    function startMove(obj, attr, iTarget) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var currStyle = 0;
+            if (attr == 'opacity') {
+                currStyle = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+            } else {
+                currStyle = parseInt(getStyle(obj, attr));
+            }
+
+            var speed = (iTarget - currStyle) / 6;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+            if (currStyle == iTarget) {
+                clearInterval(obj.timer);
+            } else {
+                if (attr == 'opacity') {
+                    obj.style.filter = 'alpha(opacity:' + (currStyle + speed) + ')';
+                    obj.style.opacity = (currStyle + speed) / 100;
+                } else {
+                    obj.style[attr] = currStyle + speed + 'px';
+                }
+            }
+        }, 30)	
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

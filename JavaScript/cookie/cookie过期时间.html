@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    // expire属性来设置cookie有效期
+    var oDate = new Date();
+
+    oDate.setDate(oDate.getDate() + 14);
+
+    document.cookie = 'user=blue;expires=' + oDate;
+
+    alert(document.cookie);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

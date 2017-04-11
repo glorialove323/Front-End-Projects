@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+
+        var disX = 0;
+        var disY = 0;
+
+        oDiv.onmousedown = function(ev) {
+            var oEvent = ev || event;
+            disX = oEvent.clientX - oDiv.offsetLeft;
+            disY = oEvent.clientY - oDiv.offsetTop;
+
+            document.onmousemove = function(ev) {
+                // 为了防止用户在拖拽的过程中出界
+                var oEvent = ev || event;
+                /*oDiv.style.left = oEvent.clientX - disX + 'px';
+                oDiv.style.top = oEvent.clientY - disY + 'px';*/
+                var l = oEvent.clientX - disX;
+                var t = oEvent.clientY - disY;
+
+                if (l < 0) {
+                    l = 0; //避免左拖拽出
+                } else if (l > document.documentElement.clientWidth - oDiv.offsetWidth) {
+                    l = document.documentElement.clientWidth - oDiv.offsetWidth; //避免右拖拽出
+                }
+
+                if (t < 0) {
+                    t = 0; //避免上拖拽出
+                } else if (t > document.documentElement.clientHeight - oDiv.offsetHeight) {
+                    t = document.documentElement.clientHeight - oDiv.offsetHeight; //避免下拖拽出
+                }
+
+                oDiv.style.left = l + 'px';
+                oDiv.style.top = t + 'px';
+            };
+
+            document.onmouseup = function() {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+            // 针对FF会出现拖拽出现的两个div，return false 可以阻止FF的该默认事件
+            return false;
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

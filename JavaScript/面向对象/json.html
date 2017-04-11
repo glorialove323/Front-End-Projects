@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    // json可以加属性，加方法
+    var json = {
+        name: 'blue',
+        qq: '258248832',
+
+        showName: function() {
+            alert('我的名字叫：' + this.name);
+        },
+        showQQ: function() {
+            alert('我的QQ号是：' + this.qq);
+        }
+    };
+
+    var json2 = {
+        name: '...',
+        qq: '258248832',
+
+        showName: function() {
+            alert('我的名字叫：' + this.name);
+        },
+        showQQ: function() {
+            alert('我的QQ号是：' + this.qq);
+        }
+    };
+    // json是单体的，只能有一个对象
+    json.showName();
+    json.showQQ();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

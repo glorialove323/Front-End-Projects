@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        document.onclick = function(ev) {
+            //IE
+            //alert(event.clientX+','+event.clientY);
+
+            //FF
+            //alert(ev.clientX+','+ev.clientY);
+            
+            // 兼容写法
+            var oEvent = ev||event;
+            alert(oEvent.clientX+','+oEvent.clientY);
+        }
+    }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

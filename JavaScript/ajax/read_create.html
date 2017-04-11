@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oBtn = document.getElementById('btn1');
+        var oUl = document.getElementById('ul1');
+
+        oBtn.onclick = function() {
+        	// 阻止缓存的方式，加入一个无关的t参数，并且带一个时间戳
+            ajax('data.txt?=t' + new Date().getTime(), function(str) {
+            	// eval函数的用法
+                var arr = eval(str);
+                for (var i = 0; i < arr.length; i++) {
+                    var oLi = document.createElement('li');
+
+                    oLi.innerHTML = 'user：<strong>' + arr[i].user + '</strong>password:<span>' + arr[i].pass + '</span>';
+
+                    oUl.appendChild(oLi);
+                }
+            }, function() {
+                alert('error')
+            })
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="读取">
+    <ul id="ul1"></ul>
+</body>
+
+</html>

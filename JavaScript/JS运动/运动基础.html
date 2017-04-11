@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        height: 200px;
+        width: 200px;
+        background: red;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+    }
+    </style>
+    <script type="text/javascript">
+    var timer = null;
+
+    function startMove() {
+        var oDiv = document.getElementById('div1');
+        clearInterval(timer);
+        timer = setInterval(function() {
+            var speed = 7;
+            if (oDiv.offsetLeft >= 300) {
+                clearInterval(timer);
+            } else {
+                oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+            }
+
+        }, 30)
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="开始运动" onclick="startMove()">
+    <div id="div1"></div>
+</body>
+
+</html>

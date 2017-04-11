@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    // 全局变量在任何地方都可以使用
+    var b = 4;
+    // 子函数可以使用父函数的局部变量
+    function aaa() {
+        var a = 5;
+
+        function bbb() {
+            alert(a+b);
+        }
+        bbb();
+    }
+    aaa();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

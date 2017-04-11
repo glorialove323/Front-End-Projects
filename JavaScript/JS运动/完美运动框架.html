@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        filter: alpha(opacity: 30);
+        opacity: 0.3;
+    }
+    </style>
+    <script src="move.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+        var oBtn = document.getElementById('btn1');
+
+        oBtn.onclick = function() {
+            startMove(oDiv, {
+                width: 300,
+                height: 300,
+                opacity: 100
+            },function(){alert('a');})
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="开始运动">
+    <div id="div1"></div>
+</body>
+
+</html>

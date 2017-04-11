@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 div{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        background: #ccc;
+        display: none;
+    }
+    .active{
+    	background: yellow;
+    }
+    </style>
+    <script type="text/javascript">
+    	window.onload = function(){
+    		var oDiv = document.getElementById('div1');
+    		var aBtn = oDiv.getElementsByTagName('input');
+    		var aDiv = oDiv.getElementsByTagName('div');
+
+    		for (var i = 0; i < aBtn.length; i++) {
+    			aBtn[i].index = i;
+    			aBtn[i].onclick = function(){
+    				for (var i = 0; i < aBtn.length; i++) {
+    					aBtn[i].className = '';
+    					aDiv[i].style.display='none';
+    				}
+    				this.className='active';
+    				aDiv[this.index].style.display='block';
+    			}
+    		}
+    	}
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <input class="active" type="button" value="教育">
+        <input type="button" value="培训">
+        <input type="button" value="招生">
+        <input type="button" value="出国">
+        <div style="display: block;">这里是描述教育的内容</div>
+        <div>这里是描述培训的内容</div>
+        <div>这里是描述招生的内容</div>
+        <div>这里是描述出国的内容</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function createPerson(name,age){
+			this.name = name;
+			this.age = age;
+		}
+
+		createPerson.prototype.showName(){
+			alert(this.name);
+		}
+
+		createPerson.prototype.shoeAge(){
+			alert(this.age);
+		}
+		var obj = new createPerson('aaa',12);
+		var obj2 = new createPerson('bbb',13);
+
+		alert(obj.showName==obj2.showName);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

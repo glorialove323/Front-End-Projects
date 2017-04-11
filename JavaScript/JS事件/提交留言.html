@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oTxt1 = document.getElementById('text1');
+        var oBtn = document.getElementById('btn1');
+        var oTxt2 = document.getElementById('text2');
+        // 实现点击发布按钮的发布功能
+        oBtn.onclick = function(){
+        	oTxt2.value +=oTxt1.value+'\n';
+        	oTxt1.value='';
+        }
+
+        // 实现按enter键发布，在oText1上进行事件处理
+        oTxt1.onkeydown = function(ev) {
+            var oEvent = ev || event;
+            // 13是enter键
+            if (oEvent.keyCode == 13) {
+                oTxt2.value += oTxt1.value + '\n';
+                oTxt1.value = '';
+            }
+        }
+
+        /*// 实现enter+ctrl键发布
+        oTxt1.onkeydown = function(ev) {
+            var oEvent = ev || event;
+            if (oEvent.keyCode == 13 && oEvent.ctrlKey) {
+                oTxt2.value += oTxt1.value + '\n';
+                oTxt1.value = '';
+            }
+        }*/
+    }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text1">
+    <input type="button" id="btn1" value="发布">
+    <br>
+    <textarea id="text2" rows="10" cols="40"></textarea>
+</body>
+
+</html>

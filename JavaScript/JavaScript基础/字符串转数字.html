@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 字符串转数字 -->
+    <script type="text/javascript">
+    // 强制类型转换，显示类型转换
+    // parseInt
+    var a = "13";
+    alert(parseInt(a) + 1); //14
+
+    var b = "12px34";
+    alert(parseInt(b)); //12
+
+    var c = "abc";
+    alert(parseInt(c)); //NaN
+    //隐式类型转换
+    //==,===
+    var d = "5";
+    var e = 5;
+    alert(d==e);//true,	先转换类型，然后进行比较
+    alert(d===e);//false,	不转换类型，直接比较
+    //减法
+    var f = 5;
+    var g = "5";
+    alert(f+g);//55	1、字符串拼接	2、数字相加 会执行第一个
+    alert(f-g);//0	1、数字相减	会先进行类型转换，在执行减法
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

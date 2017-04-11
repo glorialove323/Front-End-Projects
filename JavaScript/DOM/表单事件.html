@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oForm = document.getElementById('form1');
+
+			oForm.onreset = function(){
+				alert("确定要清空所有内容吗")
+			}
+		}
+	</script>
+</head>
+<body>
+	<form id="form1" action="http://www.baidu.com/">
+		用户名：<input type="text" name="user">
+		密码：<input type="password" name="pass">
+		<input type="submit">
+		<input type="reset">
+	</form>
+</body>
+</html>

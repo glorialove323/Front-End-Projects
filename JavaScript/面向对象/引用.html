@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    /*这样子引用会出现问题 
+           var arr1 = [1, 2, 3];
+            var arr2 = arr1;
+
+            arr2.push(4);
+
+            alert(arr1); //1,2,3,4
+            alert(arr2); //1,2,3,4*/
+    var arr1 = [1, 2, 3];
+    var arr2 = [];
+
+    for (var i = 0; i < arr1.length; i++) {
+        arr2.push(arr1[i]);
+    }
+
+    arr2.push(4);
+
+    alert(arr1); //1,2,3
+    alert(arr2); //1,2,3,4
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

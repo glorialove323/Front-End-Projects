@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 在文本框输入数据，点击求和按钮，弹出和，并且能够判断输入的是不是数字 -->
+    <script type="text/javascript">
+    window.onload = function() {
+        var oNum1 = document.getElementById('text1');
+        var oNum2 = document.getElementById('text2');
+        var oBtn = document.getElementById('btn');
+
+        oBtn.onclick = function() {
+            var n1 = parseInt(oNum1.value);
+            var n2 = parseInt(oNum2.value);
+
+            if (isNaN(n1)) {
+                alert('您输入的第一个数字有误');
+            } else if (isNaN(n2)) {
+                alert('您输入的第二个数字有误');
+            } else {
+                alert(n1 + n2);
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="num" id="text1">
+        <input type="text" name="num" id="text2">
+        <input type="button" name="add" id="btn" value="求和">
+    </div>
+</body>
+
+</html>

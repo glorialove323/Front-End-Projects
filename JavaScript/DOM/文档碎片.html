@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oUl = document.getElementById('ul1');
+        // 文档碎片只在低级浏览器中才有较大作用
+        var oFrag = document.createDocumentFragment();
+        for (var i = 0; i < 1000; i++) {
+            var oLi = document.createElement('li');
+            oFrag.appendChild(oLi);
+        }
+        oUl.appendChild(oFrag);
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="ul1"></ul>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    var arr_string = ['float', 'double', 'int', 'bool', 'string'];
+    arr_string.sort();
+
+    alert(arr_string);
+
+    //会出错，因为是文本排序
+    var arr_number = [12, 6, 7, 9, 11, 111];
+    arr_number.sort();
+
+    alert(arr_number);
+    // 这才是正确的数字排序方式
+    arr_number.sort(function(n1, n2) {
+        if (n1 < n2) {
+            return -1;
+        } else if (n1 > n2) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    alert(arr_number);
+
+    // 简化形式
+    arr_number.sort(function(n1,n2){
+    	return n1-n2;
+    });
+    alert(arr_number);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

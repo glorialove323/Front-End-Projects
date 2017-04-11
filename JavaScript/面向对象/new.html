@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    function createPerson(name, qq) //构造函数
+    {
+        //系统偷偷替咱们做：
+        //var this=new Object();
+
+        //加工
+        this.name = name;
+        this.qq = qq;
+
+        this.showName = function() {
+            alert('我的名字叫：' + this.name);
+        };
+        this.showQQ = function() {
+            alert('我的QQ号：' + this.qq);
+        };
+
+        //也会偷偷做一些：
+        //return this;
+    }
+
+    var obj = new createPerson('blue', '258248832');
+    var obj2 = new createPerson('张三', '45648979879');
+
+    obj.showName();
+    obj.showQQ();
+    //alert(obj.showName==obj2.showName);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

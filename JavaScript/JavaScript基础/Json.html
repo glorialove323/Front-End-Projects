@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Json 和 数组 -->
+    <script type="text/javascript">
+    var json = {
+        a: 12,
+        b: 5,
+        c: "abd"
+    };
+    json.b++;
+
+    alert("json中的第二个值加1是" + json.b); //6
+
+    // json和数组
+    var json_2 = {
+        a: 15,
+        b: 6,
+        c: 7
+    };
+    var arr = [15, 6, 7];
+
+    alert("json中的第一个值是15" + json_2['a']);
+    alert("arr中的第一个值是15" + arr[0]);
+
+    // 直接获取json的长度是错误的，可以选择for(var .. in ..)的方式，length++，或得
+    alert("json的长度是3" + json_2.length); //underfined
+    alert("arr的长度是3" + arr.length);
+
+    for (var i = 0; i < arr.length; i++) {
+        alert("arr数组中第" + i + "个东西是" + arr[i]);
+    }
+    for (var i in arr) {
+        alert("arr数组中第" + i + "个东西是" + arr[i]);
+    }
+    for (var i in json_2) {
+        alert("json_2中第" + i + "个东西是" + json_2[i]);
+    }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

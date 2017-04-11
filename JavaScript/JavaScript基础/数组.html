@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var arr=[1,2,3];
+		// 删除元素
+		// 从头部弹出元素
+		alert(arr.shift());
+		// 从尾部弹出元素
+		alert(arr.pop());
+
+		// 添加元素
+		// 从头部添加元素
+		arr.unshift(4);
+		alert(arr);
+		// 从尾部添加元素
+		arr.push(5);
+		alert(arr);
+		// 数组的长度
+		alert(arr.length);
+		// 数组的拼接
+		var arr_con = [1,1,1];
+		alert(arr.concat(arr_con));
+		// splice的用法
+		// 删除：splice(起点，长度)
+		arr.splice(1,1);
+		alert(arr);
+		// 插入：splice(起点，长度，元素。。。)
+		arr.splice(1,1,'1','2','3');
+		alert(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

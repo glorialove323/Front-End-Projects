@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        var aA = document.getElementsByTagName('a');
+
+        for (var i = 0; i < aA.length; i++) {
+        	aA[i].onclick = function (){
+        		this.parentNode.style.display = 'none';
+        	}
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>dfasdf <a href="javascript:;">隐藏</a></li>
+        <li>45346 <a href="javascript:;">隐藏</a></li>
+        <li>fghfgcvn <a href="javascript:;">隐藏</a></li>
+        <li>vcbxcvbc <a href="javascript:;">隐藏</a></li>
+        <li>757465867 <a href="javascript:;">隐藏</a></li>
+    </ul>
+</body>
+
+</html>

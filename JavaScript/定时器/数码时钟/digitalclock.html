@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    function toDou(n) {
+        if (n < 10) {
+            return '0' + n;
+        } else {
+            return '' + n;
+        }
+    }
+    window.onload = function() {
+        function clock() {
+            var aImg = document.getElementsByTagName('img');
+            var oDate = new Date();
+            var str = toDou(oDate.getHours()) + toDou(oDate.getMinutes()) + toDou(oDate.getSeconds());
+            for (var i = 0; i < aImg.length; i++) {
+                aImg[i].src = 'imgs/' + str.charAt(i) + '.png';
+            }
+        }
+        setInterval(clock,1000);
+        // 如果不加这句，会在刷新时全部归置为0
+        clock();
+    }
+    </script>
+</head>
+
+<body style="background: black;color: white;font-size: 50px;">
+    <img src="imgs/0.png">
+    <img src="imgs/0.png"> :
+    <img src="imgs/0.png">
+    <img src="imgs/0.png"> :
+    <img src="imgs/0.png">
+    <img src="imgs/0.png">
+</body>
+
+</html>

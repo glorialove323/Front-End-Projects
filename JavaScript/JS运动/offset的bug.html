@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background: red;
+        border: 1px solid black;
+    }
+    </style>
+    <script type="text/javascript">
+    // 可以把该函数作为一个获取样式的通用函数，针对取非行间样式
+    function getStyle(obj, name) {
+        if (obj.currentStyle) {
+            return obj.currentStyle[name];
+        } else {
+            return getComputedStyle(obj, false)[name];
+        }
+    }
+    setInterval(function() {
+        var oDiv = document.getElementById('div1');
+        // 事实上，它是增长的，并不是减小的，因为offsetWidth有bug，因此我们可以采用width来做
+        // oDiv.style.width=oDiv.offsetWidth-1+'px';
+        oDiv.style.width = parseInt(getStyle(oDiv, 'width')) - 1 + 'px';
+    }, 30)
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

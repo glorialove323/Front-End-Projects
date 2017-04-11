@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    var oDate = new Date();
+    // setDate方法用于设置当前月的某一天1-31之间，如果超出这个范围，会按照月日往后累加
+    // oDate.setDate(34);
+    //	当前日期往后顺延几天
+    oDate.setDate(oDate.getDate() + 1);
+
+    alert(oDate.getFullYear() + '-' + (oDate.getMonth() + 1) + '-' + oDate.getDate());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

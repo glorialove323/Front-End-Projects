@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function setTxt(){
+			var oTxt = document.getElementById('text1');
+			var sTxt = oTxt.value();
+			oTxt.value = sTxt;
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<input type="text" id="text1">
+		<input type="button" id="btn" value="修改文字" onclick="setTxt()">
+	</div>
+</body>
+</html>

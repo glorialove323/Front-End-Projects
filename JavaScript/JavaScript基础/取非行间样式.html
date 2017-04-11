@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oDiv = document.getElementById('div1');
+        //IE
+        //alert(oDiv.style.width);
+
+        //alert(oDiv.currentStyle.width);
+        //chrome firefox
+        //false 这个值可以随意选择
+        //alert(getComputedStyle(oDiv, false).width);
+        alert(oDiv.currentStyle);
+        if(oDiv.currentStyle){
+        	alert(oDiv.currentStyle.width);
+        }else{
+        	alert(getComputedStyle(oDiv, false).width);
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>
