@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia Search</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Wikipedia Search</h1>
+        <h3>Find What You Want</h3>
+    </div>
+    <div class="search">
+        <input type="text" id="query">
+        <button id="search" class="btn btn-default">Search</button>
+        <a href="http://en.wikipedia.org/wiki/Special:Random" class="btn btn-primary" target="">Random</a>
+    </div>
+    <div id="results" class="invis">
+        <div id="search-header">
+            <h4>Search Results</h4>
+            <button id="close" class="btn btn-danger">X</button>
+        </div>
+        <div class="well"></div>
+    </div>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="search.js"></script>
+</body>
+
+</html>

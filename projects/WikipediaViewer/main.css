@@ -1,0 +1,30 @@
+.jumbotron{
+	text-align: center;
+}
+
+.search{
+	width: 80%;
+	display: flex;
+	margin: auto;
+}
+
+input{
+	flex: 2;
+}
+#results{
+	width: 80%;
+	margin: auto;
+	margin-top: 30px;
+}
+
+#search-header h4{
+	display: inline;
+}
+
+#search-header button{
+	float: right;
+}
+
+.invis{
+	display: none;
+}

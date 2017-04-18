@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TwitchtvJSONAPI</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="header">
+            <h1>Twitch Streamers</h1>
+            <div class="menu">
+                <div class="selector active" id="all">
+                    <div class="circle"></div>
+                    <p>All</p>
+                </div>
+                <div class="selector" id="online">
+                    <div class="circle"></div>
+                    <p>Online</p>
+                </div>
+                <div class="selector" id="offline">
+                    <div class="circle"></div>
+                    <p>Offline</p>
+                </div>
+            </div>
+        </div>
+        <div id="display">
+        </div>
+        <div class="row" id="footer">
+        </div>
+    </div>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="twitch.js"></script>
+</body>
+
+</html>
