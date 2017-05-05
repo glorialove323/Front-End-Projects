@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>双色球随机选号</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    
+    .red {
+        width: 38px;
+        height: 38px;
+        background: url(icons.png) no-repeat 0 0;
+        background-position: 0 -240px;
+        line-height: 38px;
+        vertical-align: middle;
+        font-size: 20px;
+        text-align: center;
+        color: #f54646;
+    }
+    
+    .blue {
+        width: 38px;
+        height: 38px;
+        background: url(icons.png) no-repeat 0 0;
+        background-position: -48px -240px;
+        line-height: 38px;
+        vertical-align: middle;
+        font-size: 20px;
+        text-align: center;
+        color: #39f;
+    }
+    
+    .contant {
+        width: 400px;
+        margin: 50px auto;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        /*每注红色号码*/
+        var countRed = 33;
+        var redArray = new Array;
+        for (var i = 0; i < countRed; i++) {
+            redArray[i] = i + 1;
+        }
+        redArray.sort(function() {
+            return 0.5 - Math.random();
+        });
+        var first_1 = document.getElementById('first_1');
+        var first_2 = document.getElementById('first_2');
+        var first_3 = document.getElementById('first_3');
+        var first_4 = document.getElementById('first_4');
+        var first_5 = document.getElementById('first_5');
+        var first_6 = document.getElementById('first_6');
+        first_1.value = redArray[0];
+        first_2.value = redArray[1];
+        first_3.value = redArray[2];
+        first_4.value = redArray[3];
+        first_5.value = redArray[4];
+        first_6.value = redArray[5];
+
+        var second_1 = document.getElementById('second_1');
+        var second_2 = document.getElementById('second_2');
+        var second_3 = document.getElementById('second_3');
+        var second_4 = document.getElementById('second_4');
+        var second_5 = document.getElementById('second_5');
+        var second_6 = document.getElementById('second_6');
+        second_1.value = redArray[6];
+        second_2.value = redArray[7];
+        second_3.value = redArray[8];
+        second_4.value = redArray[9];
+        second_5.value = redArray[10];
+        second_6.value = redArray[11];
+
+        var third_1 = document.getElementById('third_1');
+        var third_2 = document.getElementById('third_2');
+        var third_3 = document.getElementById('third_3');
+        var third_4 = document.getElementById('third_4');
+        var third_5 = document.getElementById('third_5');
+        var third_6 = document.getElementById('third_6');
+        third_1.value = redArray[12];
+        third_2.value = redArray[13];
+        third_3.value = redArray[14];
+        third_4.value = redArray[15];
+        third_5.value = redArray[16];
+        third_6.value = redArray[17];
+
+        var fourth_1 = document.getElementById('fourth_1');
+        var fourth_2 = document.getElementById('fourth_2');
+        var fourth_3 = document.getElementById('fourth_3');
+        var fourth_4 = document.getElementById('fourth_4');
+        var fourth_5 = document.getElementById('fourth_5');
+        var fourth_6 = document.getElementById('fourth_6');
+        fourth_1.value = redArray[18];
+        fourth_2.value = redArray[19];
+        fourth_3.value = redArray[20];
+        fourth_4.value = redArray[21];
+        fourth_5.value = redArray[22];
+        fourth_6.value = redArray[23];
+
+        var fifth_1 = document.getElementById('fifth_1');
+        var fifth_2 = document.getElementById('fifth_2');
+        var fifth_3 = document.getElementById('fifth_3');
+        var fifth_4 = document.getElementById('fifth_4');
+        var fifth_5 = document.getElementById('fifth_5');
+        var fifth_6 = document.getElementById('fifth_6');
+        fifth_1.value = redArray[24];
+        fifth_2.value = redArray[25];
+        fifth_3.value = redArray[26];
+        fifth_4.value = redArray[27];
+        fifth_5.value = redArray[28];
+        fifth_6.value = redArray[29];
+
+        /*每注蓝色号码*/
+        var countBlue = 16;
+        var blueArray = new Array;
+        for (var i = 0; i < countRed; i++) {
+            blueArray[i] = i + 1;
+        }
+        blueArray.sort(function() {
+            return 0.5 - Math.random();
+        });
+        var first_7 = document.getElementById('first_7');
+        var second_7 = document.getElementById('second_7');
+        var third_7 = document.getElementById('third_7');
+        var fourth_7 = document.getElementById('fourth_7');
+        var fifth_7 = document.getElementById('fifth_7');
+        first_7.value = blueArray[0];
+        second_7.value = blueArray[1];
+        third_7.value = blueArray[2];
+        fourth_7.value = blueArray[3];
+        fifth_7.value = blueArray[4];
+    }
+    </script>
+</head>
+
+<body>
+    <div class="contant">
+        <div class="first">
+            第一注：
+            <input type="text" id="first_1" class="red">
+            <input type="text" id="first_2" class="red">
+            <input type="text" id="first_3" class="red">
+            <input type="text" id="first_4" class="red">
+            <input type="text" id="first_5" class="red">
+            <input type="text" id="first_6" class="red">
+            <input type="text" id="first_7" class="blue">
+        </div>
+        <br>
+        <div class="second">
+            第二注：
+            <input type="text" id="second_1" class="red">
+            <input type="text" id="second_2" class="red">
+            <input type="text" id="second_3" class="red">
+            <input type="text" id="second_4" class="red">
+            <input type="text" id="second_5" class="red">
+            <input type="text" id="second_6" class="red">
+            <input type="text" id="second_7" class="blue">
+        </div>
+        <br>
+        <div class="third">
+            第三注：
+            <input type="text" id="third_1" class="red">
+            <input type="text" id="third_2" class="red">
+            <input type="text" id="third_3" class="red">
+            <input type="text" id="third_4" class="red">
+            <input type="text" id="third_5" class="red">
+            <input type="text" id="third_6" class="red">
+            <input type="text" id="third_7" class="blue">
+        </div>
+        <br>
+        <div class="fourth">
+            第四注：
+            <input type="text" id="fourth_1" class="red">
+            <input type="text" id="fourth_2" class="red">
+            <input type="text" id="fourth_3" class="red">
+            <input type="text" id="fourth_4" class="red">
+            <input type="text" id="fourth_5" class="red">
+            <input type="text" id="fourth_6" class="red">
+            <input type="text" id="fourth_7" class="blue">
+        </div>
+        <br>
+        <div class="fifth">
+            第五注：
+            <input type="text" id="fifth_1" class="red">
+            <input type="text" id="fifth_2" class="red">
+            <input type="text" id="fifth_3" class="red">
+            <input type="text" id="fifth_4" class="red">
+            <input type="text" id="fifth_5" class="red">
+            <input type="text" id="fifth_6" class="red">
+            <input type="text" id="fifth_7" class="blue">
+        </div>
+    </div>
+</body>
+
+</html>
