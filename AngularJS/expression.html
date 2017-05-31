@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>angular expression</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app ng-init="quality=1;cost=5">
+        <p>我的第一个表达式：{{5+5}}</p>
+        <p>angularJS数字：{{quality*cost}}</p>
+        <p>跟ng-bind用法相同：<span ng-bind="quality*cost"></span></p>
+    </div>
+</body>
+
+</html>
