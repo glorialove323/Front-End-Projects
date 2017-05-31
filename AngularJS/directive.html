@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>angularJS directive</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="" ng-init="name='John', names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]" >
+        <p>在输入框中尝试输入：</p>
+        <!-- ng-model 指令把元素值（比如输入域的值）绑定到应用程序。 -->
+        <p>姓名：
+            <input type="text " ng-model="name ">
+        </p>
+        <p>你输入的为：{{name}}</p>
+
+        <p>循环对象：</p>
+        <ul>
+        	<li ng-repeat="x in names">
+        		{{x.name+''+x.country}}
+        	</li>
+        </ul>
+    </div>
+</body>
+
+</html>
