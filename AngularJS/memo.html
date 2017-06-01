@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angularJS 备忘录</title>
+	<script src= "http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="memoCtrl">
+	<h2>我的备忘录</h2>
+
+	<form ng-submit="add()">
+		<input type="text" ng-model="input" size="50" placeholder="新增">
+		<input type="submit" value="新增">
+	</form>
+
+	<br>
+	<div ng-repeat="x in lists">
+		<input type="checkbox" ng-model="x.done"><span ng-bind="x.text"></span>
+	</div>
+	<p>
+		<button ng-click="remove()">删除记录</button>
+	</p>
+
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("memoCtrl",function($scope){
+			$scope.lists=[{text:"clearn house",done:false}];
+
+			$scope.add=function(){
+				$scope.lists.push({text:$scope.input,done:false});
+				$scope.input="";
+			}
+			$scope.remove = function(){
+				var oldLists = $scope.lists;
+				$scope.lists=[];
+				angular.forEach(oldLists,function(x){
+					if (!x.done) {
+						$scope.lists.push(x);
+					}
+				})
+			}
+		})
+	</script>
+</body>
+</html>
