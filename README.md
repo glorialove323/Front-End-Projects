@@ -12,7 +12,6 @@ Projects:
 1. DoubleColorBall
 <br>
   This application can help you quickly decide which lottery needed to buy. All numbers are not repeated at random.
-  <br>
 2.Random Quote Generator
 <br>
   A simple project to randomly generate a new quote, when U click the button, a new quote will display and also U can share on sina blog.
