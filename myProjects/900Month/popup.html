@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link href="libs/angular-datepicker.min.css" rel="stylesheet">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+
+<body data-ng-app="myApp" data-ng-controller="myController" data-ng-class="{drawbody: isDrawbody}">
+    <div data-ng-switch on="st">
+        <div class="welcome" data-ng-switch-when="0"></div>
+        <div class="drawset" data-ng-switch-when="1"></div>
+        <div class="drawshow" data-ng-switch-when="2"></div>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-datepicker.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/popup.js -->
+    <script src="scripts/popup.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

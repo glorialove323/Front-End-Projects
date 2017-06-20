@@ -1,0 +1,178 @@
+body {
+    width: 340px;
+    height: 565px;
+    margin: 0px auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.say h1 {
+    font-size: 32px;
+    -webkit-margin-before: 1em;
+}
+
+.say p {
+    font-size: 16px;
+    color: #666;
+    -webkit-margin-before: 0.24em;
+    -webkit-margin-after: 0.24em;
+}
+
+.say p.firstP {
+    font-size: 18px;
+    -webkit-margin-after: 1.8em;
+}
+
+.button {
+    width: 132px;
+    height: 32px;
+    border: 1px solid #DC4F33;
+    color: #fff;
+    background: #DC4F33;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+button.draw {
+    margin-top: 2em;
+}
+
+.myDatepicker {
+    margin: 35px 47px 17px;
+    height: 236px;
+}
+
+.myH1 {
+    font-size: 32px;
+    font-weight: normal;
+    -webkit-margin-before: 40px;
+}
+
+.myP {
+    font-size: 16px;
+    color: #666;
+    -webkit-margin-before: 0.24em;
+    -webkit-margin-after: 0.24em;
+    padding: 0 20px;
+}
+
+.red {
+    color: #DC4F33;
+}
+
+[date-picker] .now:hover,
+[date-picker] .now:active,
+[date-picker] .now.active,
+[date-picker] .now.disabled,
+[date-picker] .now[disabled],
+[date-picker] .active:hover,
+[date-picker] .now:hover,
+[date-picker] .active:active,
+[date-picker] .now:active,
+[date-picker] .active.active,
+[date-picker] .now.active,
+[date-picker] .active.disabled,
+[date-picker] .now.disabled,
+[date-picker] .active[disabled],
+[date-picker] .now[disabled] {
+    background-color: #DC4F33;
+    background-image: none;
+}
+
+[date-picker] .active:hover {
+    color: #000;
+}
+
+.drawbody {
+    height: 525px;
+    text-align: center;
+}
+
+.footer {
+    height: 50px;
+    width: 340px;
+    margin: 0 auto;
+    bottom: 25px;
+    left: 0px;
+    text-align:center;
+}
+
+.nodraw {
+    border: 1px solid #DC4F33;
+    color: #333;
+    background: #fff;
+    cursor: default;
+}
+
+.myShow {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.myHave {
+    font-size: 20px;
+}
+
+.myShow span,
+.myHave span {
+    font-size: 26px;
+    color: #000;
+}
+
+ul.table {
+    width: 330px;
+    height: 330px;
+    border-bottom: 1px #DDD solid;
+    border-right: 1px #DDD solid;
+    padding-left: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-margin-start: 5px;
+    -webkit-margin-before: 2.8em;
+}
+
+ul.table li {
+    list-style-type: none;
+    width: 10px;
+    height: 10px;
+    border-left: 1px #DDD solid;
+    border-top: 1px #DDD solid;
+    float: left;
+}
+
+ul.table li.dayAgo {
+    background: #999;
+}
+
+ul.table li.dayNow {
+    background: #DC4F33;
+}
+
+.removeBtn,
+.returnBtn,
+.gloriaBtn {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #999;
+    float: right;
+    margin: -16px 5px 0 0; 
+    cursor: pointer;
+    width: 50px;
+    height: 20px;
+    outline: none;
+}
+
+.returnBtn {
+    margin: 50px 49px;
+    position: absolute;
+}
+
+.gloriaBtn {
+    position: absolute;
+    margin: 48px 47px;
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 14px;
+}
